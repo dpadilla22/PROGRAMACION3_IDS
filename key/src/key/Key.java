@@ -60,6 +60,9 @@ public class Key extends JFrame implements KeyListener {
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.CENTER);
 		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		panel_2.add(lblNewLabel);
 		addKeyListener(this);
 	}
 
@@ -83,6 +86,9 @@ public class Key extends JFrame implements KeyListener {
 		System.out.println("presionaste "+ e.getKeyCode());
 		if(e.getKeyCode()==65) {
 			System.out.println("ganaste");
+		
+			}else {
+				System.out.println("perdiste");
 		}
 	}
 }
