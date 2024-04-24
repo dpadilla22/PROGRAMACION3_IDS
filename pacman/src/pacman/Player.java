@@ -61,13 +61,31 @@ public class Player  {
 	
 	
 
-	public boolean tocado(Player jugador, Player obstaculo) {
-	    if (jugador.getX() + jugador.getW() >= obstaculo.getX()
-	            && jugador.getX() <= obstaculo.getX() + obstaculo.getW()
-	            && jugador.getY() + jugador.getH() >= obstaculo.getY()
-	            && jugador.getY() <= obstaculo.getY() + obstaculo.getH()) {
-	        return true; 
-	    }
-	    return false; 
-	}
+
+    public boolean colisionConObstaculo(Player jugador, Player[] obstaculos) {
+        for (Player obstaculo : obstaculos) {
+            if (jugador.getX() + jugador.getW() >= obstaculo.getX() &&
+                jugador.getX() <= obstaculo.getX() + obstaculo.getW() &&
+                jugador.getY() + jugador.getH() >= obstaculo.getY() &&
+                jugador.getY() <= obstaculo.getY() + obstaculo.getH()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean colisionConBolita(Player jugador, Player bolas) {
+        if (bolas != null &&
+            jugador.getX() + jugador.getW() >= bolas.getX() &&
+            jugador.getX() <= bolas.getX() + bolas.getW() &&
+            jugador.getY() + jugador.getH() >= bolas.getY() &&
+            jugador.getY() <= bolas.getY() + bolas.getH()) {
+            return true;
+        }
+        return false;
+    }
+
+
 }
+
+
